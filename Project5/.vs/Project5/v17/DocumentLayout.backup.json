@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C\u8BED\u8A00\\homework\\Project5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A6BF5BA-396B-403F-94B7-D803CD632640}|Project5\\Project5.vcxproj|D:\\C\u8BED\u8A00\\homework\\Project5\\Project5\\\u731C\u6570\u5B57.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8A6BF5BA-396B-403F-94B7-D803CD632640}|Project5\\Project5.vcxproj|solutionrelative:Project5\\\u731C\u6570\u5B57.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u731C\u6570\u5B57.cpp",
+              "DocumentMoniker": "D:\\C\u8BED\u8A00\\homework\\Project5\\Project5\\\u731C\u6570\u5B57.cpp",
+              "RelativeDocumentMoniker": "Project5\\\u731C\u6570\u5B57.cpp",
+              "ToolTip": "D:\\C\u8BED\u8A00\\homework\\Project5\\Project5\\\u731C\u6570\u5B57.cpp",
+              "RelativeToolTip": "Project5\\\u731C\u6570\u5B57.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-29T13:55:42.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

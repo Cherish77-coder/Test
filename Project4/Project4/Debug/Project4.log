@@ -1,0 +1,10 @@
+﻿  20251124task1.cpp
+  20251124task2.cpp
+D:\C语言\homework\Project4\Project4\20251124task2.cpp(13,14): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+  20251124task3.cpp
+  20251124task4.cpp
+  正在生成代码...
+20251124task2.obj : error LNK2005: _main 已经在 20251124task1.obj 中定义
+20251124task3.obj : error LNK2005: _main 已经在 20251124task1.obj 中定义
+20251124task4.obj : error LNK2005: _main 已经在 20251124task1.obj 中定义
+D:\C语言\homework\Project4\Debug\Project4.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
