@@ -1,0 +1,9 @@
+﻿  二分查找.cpp
+  年月份天数判断.cpp
+  猜数字.cpp
+  逐渐打印数组.cpp
+D:\C语言\homework\Project5\Project5\逐渐打印数组.cpp(9,9): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+年月份天数判断.obj : error LNK2005: main 已经在 二分查找.obj 中定义
+猜数字.obj : error LNK2005: main 已经在 二分查找.obj 中定义
+逐渐打印数组.obj : error LNK2005: main 已经在 二分查找.obj 中定义
+D:\C语言\homework\Project5\x64\Release\Project5.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

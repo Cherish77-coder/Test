@@ -24,5 +24,26 @@
     <ClCompile Include="二分查找.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="年月份天数判断.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="九九乘法表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="求最大公约数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="打印100到200素数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="统计单词个数.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="二分查找.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="闰年.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

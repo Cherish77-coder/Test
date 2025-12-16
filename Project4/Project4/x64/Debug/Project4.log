@@ -1,2 +1,21 @@
-﻿  20251124task4.cpp
-  Project4.vcxproj -> D:\C语言\homework\Project4\x64\Debug\Project4.exe
+﻿  20251201.cpp
+D:\C语言\homework\Project4\Project4\20251201.cpp(7,11): error C2131: 表达式的计算结果不是常数
+      D:\C语言\homework\Project4\Project4\20251201.cpp(7,11):
+      因读取超过生命周期的变量而失败
+      D:\C语言\homework\Project4\Project4\20251201.cpp(7,11):
+      请参见“m”的用法
+  
+D:\C语言\homework\Project4\Project4\20251201.cpp(7,14): error C2131: 表达式的计算结果不是常数
+      D:\C语言\homework\Project4\Project4\20251201.cpp(7,14):
+      因读取超过生命周期的变量而失败
+      D:\C语言\homework\Project4\Project4\20251201.cpp(7,14):
+      请参见“n”的用法
+  
+D:\C语言\homework\Project4\Project4\20251201.cpp(10,26): error C2036: “int [m][n]”: 未知的大小
+D:\C语言\homework\Project4\Project4\20251201.cpp(10,29): error C2036: “int [m][n]”: 未知的大小
+D:\C语言\homework\Project4\Project4\20251201.cpp(13,19): error C2036: “int [m][n]”: 未知的大小
+D:\C语言\homework\Project4\Project4\20251201.cpp(13,22): error C2036: “int [m][n]”: 未知的大小
+D:\C语言\homework\Project4\Project4\20251201.cpp(16,24): error C2036: “int [m][n]”: 未知的大小
+D:\C语言\homework\Project4\Project4\20251201.cpp(16,27): error C2036: “int [m][n]”: 未知的大小
+D:\C语言\homework\Project4\Project4\20251201.cpp(17,23): error C2036: “int [m][n]”: 未知的大小
+D:\C语言\homework\Project4\Project4\20251201.cpp(17,26): error C2036: “int [m][n]”: 未知的大小

@@ -1,4 +1,0 @@
-﻿cl : 命令行  warning D9025: 正在重写“/sdl”(用“/GS-”)
-  2025114task2.cpp
-D:\C语言\visial2022 code\Project1\Project1\2025114task2.cpp(5,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Project1.vcxproj -> D:\C语言\visial2022 code\Project1\x64\Debug\Project1.exe

@@ -24,7 +24,10 @@
     <ClCompile Include="20251124task3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="20251124task4.cpp">
+    <ClCompile Include="20251201.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="20251201task2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,0 +1,8 @@
+﻿  game.c
+  test.c
+D:\C语言\homework\mine game2\mine game2\game.c(83,15): warning C4048: “char (*)[16]”和“char (*)[18]”数组的下标不同
+D:\C语言\homework\mine game2\mine game2\game.c(96,28): warning C4028: 形参 1 与声明不一致
+D:\C语言\homework\mine game2\mine game2\game.c(113,4): warning C4098: “FlagMine”:“void”函数返回值
+D:\C语言\homework\mine game2\mine game2\game.c(120,4): warning C4098: “FlagMine”:“void”函数返回值
+  正在生成代码...
+  mine game2.vcxproj -> D:\C语言\homework\mine game2\x64\Debug\mine game2.exe

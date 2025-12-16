@@ -5,7 +5,7 @@
 int main()
 {
 	char arr1[50] = {"***************************************"};
-	char arr2[50] = {"   Hellow,its the best time to learn.  "};
+	char arr2[50] = {"   Hellow,its the best time to sleep.  "};
 	int sz = strlen(arr1);
 	int left = 0, right = sz - 1;
 	while (left<=right)
