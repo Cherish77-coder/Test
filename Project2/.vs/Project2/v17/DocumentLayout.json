@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C\u8BED\u8A00\\homework\\Project2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EEE35EC8-1B3F-44EB-ABD1-266B8814E3DC}|Project2\\Project2.vcxproj|D:\\C\u8BED\u8A00\\homework\\Project2\\Project2\\12.26test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EEE35EC8-1B3F-44EB-ABD1-266B8814E3DC}|Project2\\Project2.vcxproj|solutionrelative:Project2\\12.26test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "12.26test.c",
+              "DocumentMoniker": "D:\\C\u8BED\u8A00\\homework\\Project2\\Project2\\12.26test.c",
+              "RelativeDocumentMoniker": "Project2\\12.26test.c",
+              "ToolTip": "D:\\C\u8BED\u8A00\\homework\\Project2\\Project2\\12.26test.c",
+              "RelativeToolTip": "Project2\\12.26test.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-12-16T01:05:33.208Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
