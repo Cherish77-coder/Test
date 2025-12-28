@@ -1,5 +1,27 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+#include<assert.h>
+char* my_strcat(char* p1,const char* p2)
+{
+	char* ret = p1;
+	while (*p1!='\0')
+		p1++;
+	assert(p1 && p2);
+	while ((*p1++ = *p2++))
+	{
+	};
+	return ret;
+}
+int main()
+{
+	char arr1[10] = "abc";
+	char arr2[4] = "def";
+	my_strcat(arr1, arr2);
+	printf("%s", arr1);
+	return 0;
+}
+
+
 //int main()
 //{
 //	FILE* pf = fopen("test.txt", "w+");
