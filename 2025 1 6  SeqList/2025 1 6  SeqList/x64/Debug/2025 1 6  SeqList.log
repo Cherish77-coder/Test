@@ -1,0 +1,5 @@
+﻿  SeqList.c
+D:\C语言\homework\2025 1 6  SeqList\2025 1 6  SeqList\SeqList.c(41,11): warning C4133: “=”: 从“SL *”到“typeSeq *”的类型不兼容
+  test.c
+  正在生成代码...
+  2025 1 6  SeqList.vcxproj -> D:\C语言\homework\2025 1 6  SeqList\x64\Debug\2025 1 6  SeqList.exe
