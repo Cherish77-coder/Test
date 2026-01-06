@@ -24,3 +24,4 @@ void SLPushBack(SL* ps, typeSeq x);//数组尾部插入数据
 void SLPushFront(SL* ps, typeSeq x);//数组头部插入数据
 void SLPopBack(SL* ps);//尾部删除数据
 void SLPopFront(SL* ps);
+//

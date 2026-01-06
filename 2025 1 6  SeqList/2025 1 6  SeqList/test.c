@@ -22,7 +22,7 @@ int main()
 	SLPrint(&a);
     SLPopFront(&a);//头部删除数据
 	SLPrint(&a);
-	//SLDestroy(&a);
+	SLDestroy(&a);
 
 	return 0;
 
