@@ -1,0 +1,17 @@
+﻿  SList.c
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(8,7): warning C4133: “=”: 从“SList *”到“Node *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(24,9): warning C4133: “=”: 从“SList *”到“Node *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(27,15): warning C4133: “=”: 从“Node *”到“SList *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(51,17): warning C4133: “=”: 从“Node *”到“SList *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(70,10): warning C4133: “=”: 从“SList *”到“Node *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(80,8): warning C4133: “初始化”: 从“SList *”到“Node *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(92,9): warning C4133: “=”: 从“SList *”到“Node *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(111,9): warning C4133: “=”: 从“SList *”到“Node *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(113,13): warning C4133: “=”: 从“Node *”到“SList *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(114,14): warning C4133: “=”: 从“Node *”到“SList *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(127,21): warning C4133: “!=”: 从“Node *”到“SList *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(129,9): warning C4133: “=”: 从“SList *”到“Node *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(141,12): warning C4133: “=”: 从“Node *”到“SList *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(146,8): warning C4133: “初始化”: 从“SList *”到“Node *”的类型不兼容
+D:\C语言\homework\1 9 SList\1 9 SList\SList.c(157,9): warning C4133: “初始化”: 从“SList *”到“Node *”的类型不兼容
+  1 9 SList.vcxproj -> D:\C语言\homework\1 9 SList\x64\Debug\1 9 SList.exe

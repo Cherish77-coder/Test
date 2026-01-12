@@ -1,0 +1,4 @@
+﻿  test.c
+D:\C语言\homework\2025 1 7test\2025 1 7test\test.c(36,32): warning C4090: “函数”: 不同的“const”限定符
+D:\C语言\homework\2025 1 7test\2025 1 7test\test.c(36,32): warning C4113: “int (__cdecl *)(Person *,Person *)”和“_CoreCrtNonSecureSearchSortCompareFunction”的参数列表不同
+  2025 1 7test.vcxproj -> D:\C语言\homework\2025 1 7test\x64\Debug\2025 1 7test.exe
