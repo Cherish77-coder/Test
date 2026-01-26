@@ -1,0 +1,175 @@
+#include"Slist.h"
+void SLprint(Node* phead)
+{
+	Node* pcur = phead;
+	while (pcur)
+	{
+		printf("%d->", pcur->Data);
+		pcur=pcur->next;
+	}
+	printf("NULL\n");
+}
+void SLPushBack(Node** pphead,datatype x)
+{
+	assert(pphead);
+	Node* newnode = SLadd(x);
+	if (*pphead == NULL)
+	{
+		*pphead = newnode;
+	}
+	else {
+		Node* ptail = *pphead;
+		while (ptail->next)
+		{
+			ptail=ptail->next;
+		}
+			
+		ptail->next = newnode;
+	}
+	
+}
+Node* SLadd(datatype x)
+{
+	Node* add = (Node*)malloc(sizeof(Node));
+	if (add == NULL)
+	{
+		perror("malloc");
+		exit(1);
+	}
+	else {
+		add->Data = x;
+		add->next = NULL;
+		return add;
+
+	}
+	
+}
+void SLPushFrount(Node** pphead, datatype x)
+{
+	assert(pphead);
+	Node*newnode=SLadd(x);
+		newnode->next = *pphead;
+		*pphead=newnode;
+	
+}
+void SLpopBack(Node** pphead)
+{
+	assert(pphead && *pphead);
+	if ((*pphead)->next == NULL)
+	{
+		free(*pphead);
+		*pphead = NULL;
+	}
+	else
+	{
+		Node* ptail = *pphead;
+		Node* pre = *pphead;
+		while (ptail->next)
+		{
+			pre = ptail;
+			ptail = ptail->next;
+		}
+		free(ptail);
+		ptail = NULL;
+		pre->next = NULL;
+	}
+}
+void SLPopFront(Node** pphead)//头部删除元素；
+{
+	assert(pphead && *pphead);
+	Node* next = (*pphead)->next;
+	free(*pphead);
+	*pphead = next;
+}
+Node* SLFind(Node* phead, datatype x)//查找链表元素；
+{
+	assert(phead);
+	Node* pcur = phead;
+	while (pcur)
+	{
+		if (pcur->Data == x)
+			return pcur;
+			pcur = pcur->next;
+	}
+		return NULL;
+}
+void SLInsert(Node** pphead, Node* pos, datatype x)//指定位置的前面插入数据
+{
+	assert(pphead && pos&&*pphead);
+	if (pos == *pphead)
+	{
+		SLPushFrount(pphead, x);
+	}
+	else
+	{
+		Node* new = SLadd(x);
+		Node* pcur = *pphead;
+		Node* prev = *pphead;
+		while (pcur != pos)
+		{
+			prev = pcur;
+			pcur = pcur->next;
+		}
+		new->next = pcur;
+		prev->next = new;
+	}
+	
+}
+void SLErase(Node** pphead, Node* pos)//在pos处删除节点
+{
+	assert(pphead && *pphead && pos);
+	if (pos == *pphead)
+	{
+		SLPopFront(pphead);
+	}
+	else {
+		Node* prev = *pphead;
+		while (prev->next != pos)
+		{
+			prev = prev->next;
+		}
+		prev->next = pos->next;
+		free(pos);
+		pos = NULL;
+	}
+}
+void SLInsertAfter(Node* pos, datatype x)
+{
+	assert(pos);
+	Node* new = SLadd(x);
+	new->next = pos->next;
+	pos->next = new;
+}
+void SLEraseAfter(Node* pos)
+{
+	assert(pos);
+	Node* temp = pos->next;
+	pos->next = temp->next;
+	free(temp);
+	temp = NULL;
+}
+void SListDesTroy(Node** pphead)
+{
+	assert(pphead && *pphead);
+	Node*pcur = *pphead;
+	while (pcur)
+	{
+		Node* next = pcur->next;
+		free(pcur);
+		pcur = next;
+	}
+	*pphead = NULL;
+}
+void SListReverse(Node** pphead)//顺序表的翻转；
+{
+	Node* pcur =*pphead;
+	Node* newhead = NULL;
+	while (pcur)//使用头插的方法
+	{
+		Node* next = pcur->next;
+		pcur->next = newhead;
+		newhead = pcur;
+		pcur = next;
+	}
+	*pphead = newhead;
+}
