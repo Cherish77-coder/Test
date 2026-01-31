@@ -1,0 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a=0, b=0;
+	cin >> a >> b;
+	cout << a + b << endl;
+	cout << "hello world" << endl;
+	return 0;
+}
