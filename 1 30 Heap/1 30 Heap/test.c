@@ -30,7 +30,7 @@ void HeapSort(int* arr, int n)
  //    }
 	for (int i=(n-1-1)/2;i>=0;i--)
 	{
-		AdjustUp(arr, n, i);
+		Adjustup(arr, n, i);//向上调整的时间复杂度更低效率更高O(N);
 	}
 	//向下调整建堆O（N）
 	int end = n - 1;
