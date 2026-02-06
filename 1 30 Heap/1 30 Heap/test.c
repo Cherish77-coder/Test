@@ -23,18 +23,18 @@ void test1()
 }
 void HeapSort(int* arr, int n)
 {
-	//ÅÅ½µĞò,½¨ÔìĞ¡¶Ñ
-	//for (int i =1; i<n ; i++)//Ò»²¿Ò»²¿ÏòÏÂµ÷ÕûO(N*logN)
+	//æ’é™åº,å»ºé€ å°å †
+	//for (int i =1; i<n ; i++)//ä¸€éƒ¨ä¸€éƒ¨å‘ä¸‹è°ƒæ•´O(N*logN)
 	//{
 	//	AdjustDown(arr, n, i);
  //    }
 	for (int i=(n-1-1)/2;i>=0;i--)
 	{
-		AdjustDown(arr, n, i);
+		AdjustUp(arr, n, i);
 	}
-	//ÏòÏÂµ÷Õû½¨¶ÑO£¨N£©
+	//å‘ä¸‹è°ƒæ•´å»ºå †Oï¼ˆNï¼‰
 	int end = n - 1;
-	while (end)//´ÓºóÍùÇ°ÅÅ¾ÍÊÇĞ¡¶Ñ
+	while (end)//ä»åå¾€å‰æ’å°±æ˜¯å°å †
 	{
 		swap(&arr[0], &arr[end]);
 		AdjustDown(arr, end,0);
