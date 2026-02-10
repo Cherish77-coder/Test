@@ -34,10 +34,10 @@ HeapPush(Heap* php,Hdatatype x)
 		php->capacity = newcapacity;
 	}
 	php->arr[php->size++] = x;
-	Adjustup(php->arr, php->size - 1);//²åÈëÊı¾İºóÒª¶ÔËû½øĞĞÎ»ÖÃµÄµ÷Õû
+	Adjustup(php->arr, php->size - 1);//æ’å…¥æ•°æ®åè¦å¯¹ä»–è¿›è¡Œä½ç½®çš„è°ƒæ•´
 
 }
-Adjustup(Hdatatype* arr, Hdatatype child)//ÏòÉÏµ÷Õû
+AdjustUp(Hdatatype* arr, Hdatatype child)//å‘ä¸Šè°ƒæ•´
 {
 	assert(arr);
 	while (child>0)
@@ -56,7 +56,7 @@ Adjustup(Hdatatype* arr, Hdatatype child)//ÏòÉÏµ÷Õû
 }
 AdjustDown(Hdatatype* arr, int n, int parent)
 {
-	int child = parent * 2 + 1;//¼ÙÉè×óº¢×ÓĞ¡
+	int child = parent * 2 + 1;//å‡è®¾å·¦å­©å­å°
 	while (child<n)
 	{
 		if (arr[child] < arr[child + 1]&&child+1<n)
@@ -79,7 +79,7 @@ HeapPop(Heap* php)
 	assert(php->size);
 	swap(&php->arr[0],& php->arr[php->size - 1]);
 	php->size--;
-	AdjustDown(php->arr,php->size,0);//É¾³ıÎ»ÖÃºóÒ²Òªµ÷ÕûÒòÎªÄãÊÇÖ±½Ó½»»»µ½Í·½ÚµãËùÒÔÒªÏòÏÂµ÷Õû
+	AdjustDown(php->arr,php->size,0);//åˆ é™¤ä½ç½®åä¹Ÿè¦è°ƒæ•´å› ä¸ºä½ æ˜¯ç›´æ¥äº¤æ¢åˆ°å¤´èŠ‚ç‚¹æ‰€ä»¥è¦å‘ä¸‹è°ƒæ•´
 }
 Hdatatype HeapTop(Hdatatype* arr)
 {
