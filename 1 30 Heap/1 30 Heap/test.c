@@ -23,16 +23,16 @@ void test1()
 }
 void HeapSort(int* arr, int n)
 {
-	//排降序,建造小堆
-	//for (int i =1; i<n ; i++)//一部一部向下调整O(N*logN)
-	//{
-	//	AdjustDown(arr, n, i);
- //    }
-	for (int i=(n-1-1)/2;i>=0;i--)
+	排降序,建造小堆
+	for (int i =1; i<n ; i++)//一部一部向下调整O(N)
 	{
-		Adjustup(arr, n, i);//向上调整的时间复杂度更低效率更高O(N);
-	}
-	//向下调整建堆O（N）
+		AdjustDown(arr, n, i);
+    }
+	// for (int i=(n-1-1)/2;i>=0;i--)
+	// {
+	// 	Adjustup(arr, n, i);//向上调整的时间复杂度更低效率更高O(N*logN);
+	// }
+	//向下调整建堆O（N*logN）
 	int end = n - 1;
 	while (end)//从后往前排就是小堆
 	{
