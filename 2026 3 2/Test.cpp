@@ -1,19 +1,123 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<string>
 using namespace std;
+using namespace std;
+class A
+{
+public:
+	void Print()
+	{
+		cout << "A::Print()" << endl;
+		cout << _a << endl;
+	}
+private:
+	int _a;
+};
 int main()
 {
-	string s1("hello world");
-	string s2(s1, 6);
-	string s3;
-	cout << s3 << endl;
-	cout << s1 << endl;
-	cout << s2 << endl;
-	s2[4] = 'o';
-	cout << s2 << endl;
+	A* p = nullptr;
+	p->Print();
 	return 0;
 }
+//class Date
+//{
+//public:
+//	// void Init(Date* const this, int year, int month, int day)
+//	void Init(int year, int month, int day)
+//	{
+//		// 编译报错：error C2106: “=”: 左操作数必须为左值
+//		// this = nullptr;
+//		// this->_year = year;
+//		this->_year = year;
+//		this->_month = month;
+//		this->_day = day;
+//	}void Print() {
+//		cout << _year << "/" << _month << "/" << _day << endl;
+//	}
+//private:
+//	// 这里只是声明，没有开空间
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d;
+//	d.Init(2026, 3, 2);
+//	d.Print();
+//	return 0;
+//}
+//using namespace std;
+//class d
+//{
+//public:
+//	void a()
+//	{
+//
+//	};
+//
+//};
+//class Stack
+//{
+//public:
+//private:
+//	int a;
+//	int b;
+//};
+//int main()
+//{
+//	cout << sizeof(d) << endl;
+//	cout << sizeof(Stack) << endl;
+//	return 0;
+//}
+//inline int Add(int x, int y)
+//{
+//	int ret = x + y;
+//	ret += 1;
+//	ret += 1;
+//	ret += 1;
+//	return ret;
+//}
+//int main()
+//{
+//	// 可以通过汇编观察程序是否展开
+//	// 有call Add语句就是没有展开，没有就是展开了
+//	int ret = Add(1, 2);
+//	cout << Add(1, 2) * 5 << endl;
+//	return 0;
+//}
+//inline int add(int a, int b)
+//{
+//	return a + b;
+//}
+//int main()
+//{
+//	int x = 1, y = 9;
+//	cout << add(x, y) << endl;
+//	cout << add(x, y) << endl;
+//	cout << add(x, y) << endl;
+//	cout << add(x, y) << endl;
+//	cout << add(x, y) << endl; 
+//	cout << add(x, y) << endl;
+//	cout << add(x, y) << endl; 
+//	cout << add(x, y) << endl;
+//	cout << add(x, y) << endl;
+//	return  0;
+//}
+//int main()
+//{
+//	string s1("hello world");
+//	string s2(s1, 6);
+//	string s3;
+//	cout << s3 << endl;
+//	cout << s1 << endl;
+//	cout << s2 << endl;
+//	s2[4] = 'o';
+//	cout << s2 << endl;
+//	return 0;
+//}
 //template <class T>
 //class Stack
 //{
