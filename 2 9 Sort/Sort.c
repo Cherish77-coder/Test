@@ -407,7 +407,7 @@ void CountSort(int* a, int n)
 			min = a[i];
 	}
 	int range = max - min + 1;
-	int* tmp = calloc(range, sizeof(int)*range);
+	int* tmp = calloc(range, sizeof(int));
 	for (int i = 0; i < n; i++)
 	{
 		tmp[a[i] - min]++;
