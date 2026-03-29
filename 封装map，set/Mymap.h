@@ -13,11 +13,25 @@ namespace my
 			}
 		};
 	public:
-		bool insert(const pair<K,V>& kv)
+		V& operator[](const V& val)
 		{
-			return _t.Insert(kv);
+			pair<iterator, bool> ret = _t.Insert({ val,V() });
+			return ret.first->second;
 		}
+		typedef typename RBTree<K, pair<const K, V>, mapKOfT>::Iterator iterator;
+			bool insert(const pair<K,V>& kv)
+		{
+			return _t.Insert(kv).second;
+		}
+			iterator begin()
+			{
+				return _t.begin();
+			}
+			iterator end()
+			{
+				return _t.end();
+			}
 	private:
-		RBTree<K, pair<K, V>, mapKOfT> _t;
+		RBTree<K, pair<const K, V>, mapKOfT> _t;
 	};
 }
