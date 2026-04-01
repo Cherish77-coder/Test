@@ -41,6 +41,19 @@ namespace HashTable_1
 			return (size_t)key;
 		}
 	};
+	template<>
+	struct HashFunc<string>//特化模板
+	{
+		size_t operator()(const string& s)
+		{
+			size_t ret = 0;
+			for (auto& e : s)
+			{
+				ret = ret * 131 + e;
+			}
+			return ret;
+		}
+	};
 	template<class K, class V, class Hash = HashFunc<K>>
 	class HashTable
 	{
@@ -132,14 +145,8 @@ namespace HashTable_1
 	};
 }
 //链接地址法
-namespace HashTable_2
+namespace HashTable_Bucket
 {
-	enum State
-	{
-		EMPTY,
-		EXIT,
-		ERASE
-	};
 	template<class K, class V>
 	struct HashNode
 	{
@@ -167,18 +174,102 @@ namespace HashTable_2
 			, _n(0)
 		{
 		}
+		~HashTable()
+		{
+			for (size_t i = 0; i < _tables.size(); ++i)
+			{
+				Node* cur = _tables[i];
+				Node* next = nullptr;
+				while (cur)
+				{
+					next = cur->_next;
+					_tables[i] = next;
+					delete cur;
+					cur = next;
+				}
+			}
+		}
 		bool Insert(const pair<K,V>& kv)
 		{
+			Hash hash;
+			if (_tables.size() == _n)//扩容
+			{
+				vector<Node*> NewTable(2 * _tables.size(), nullptr);
+				for (auto& e : _tables)
+				{
+					Node* cur = e;
+					while (cur)
+					{
+						Node* next = cur->_next;
+						//头插
+						size_t hashi = hash(cur->_kv.first) % NewTable.size();
+						cur->_next = NewTable[hashi];
+						NewTable[hashi] = cur;
+						cur = next;
+				    }
+					e = nullptr;
+				}
+				swap(_tables, NewTable);
+			}
 			size_t hash0 = Hash()(kv.first) % _tables.size();
 			//头插
 			Node* newnode=new Node(kv);
 			newnode->_next = _tables[hash0];
 			_tables[hash0] = newnode;
+			++_n;
 			return true;
+		}
+		Node* Find(const K& key)
+		{
+			Hash hash;
+			size_t hashi = hash(key)%_tables.size();
+			Node* cur = _tables[hashi];
+			while (cur)
+			{
+				if (cur->_kv.first == key)
+				{
+					return cur;
+				}
+				else
+				{
+					cur = cur->_next;
+				}
+			}
+			return nullptr;
+		}
+		bool Erase(const K& key)
+		{
+			Hash hash;
+			size_t hashi = hash(key) % _tables.size();
+			Node* cur = _tables[hashi];
+			Node* prev = nullptr;
+			while (cur)
+			{
+				if (cur->_kv.first==key)
+				{
+					if (cur == _tables[hashi])
+					{
+						_tables[hashi] = cur->_next;
+					}
+					else
+					{
+						prev->_next = cur->_next;
+						
+					}
+					delete cur;
+					--_n;
+					return true;	
+				}
+				else
+				{
+					prev = cur;
+					cur = cur->_next;
+				}
+			}
+			return  false;
 		}
 	private:
 		vector<Node*> _tables;
 		size_t _n;
 	};
 }
-
