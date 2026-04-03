@@ -2,11 +2,7 @@
 #include"RBtree.h"
 namespace my
 {
-	template<class K>
-	struct setIterator
-	{
-		RBTreeNode<K> ret;
-	};
+	//template<class K>
 	template<class K>
 	class set
 	{
@@ -19,6 +15,7 @@ namespace my
 		};
 	public:
 		typedef typename RBTree<K,const K,KOfT>::Iterator iterator;
+		typedef typename RBTree<K, const K, KOfT>::ConstIterator const_iterator;
 		iterator begin()
 		{
 			return _t.begin();
@@ -26,6 +23,15 @@ namespace my
 		iterator end()
 		{
 			iterator ret(_t.end());
+			return ret;
+		}
+		const_iterator cbegin() const
+		{
+			return _t.begin() ;
+		}
+		const_iterator cend() const
+		{
+			const_iterator ret(_t.end());
 			return ret;
 		}
 		

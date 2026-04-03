@@ -19,6 +19,7 @@ namespace my
 			return ret.first->second;
 		}
 		typedef typename RBTree<K, pair<const K, V>, mapKOfT>::Iterator iterator;
+		typedef typename RBTree<K, pair<const K, V>, mapKOfT>::ConstIterator const_iterator;
 			bool insert(const pair<K,V>& kv)
 		{
 			return _t.Insert(kv).second;
@@ -28,6 +29,14 @@ namespace my
 				return _t.begin();
 			}
 			iterator end()
+			{
+				return _t.end();
+			}
+			const_iterator cbegin() const
+			{
+				return _t.begin();
+			}
+			const_iterator cend() const
 			{
 				return _t.end();
 			}

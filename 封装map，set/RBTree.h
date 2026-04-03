@@ -1,16 +1,16 @@
 #pragma once
 using namespace std;
-// æšä¸¾å€¼è¡¨ç¤ºé¢œè‰²
+// Ã¶¾ÙÖµ±íÊ¾ÑÕÉ«
 enum Colour
 {
 	RED,
 	BLACK
 };
-// è¿™é‡Œæˆ‘ä»¬é»˜è®¤æŒ‰key/valueç»“æ„å®ç°
+// ÕâÀïÎÒÃÇÄ¬ÈÏ°´key/value½á¹¹ÊµÏÖ
 template<class T>
 struct RBTreeNode
 {
-	// è¿™é‡Œæ›´æ–°æ§åˆ¶å¹³è¡¡ä¹Ÿè¦åŠ å…¥parentæŒ‡é’ˆ
+	// ÕâÀï¸üĞÂ¿ØÖÆÆ½ºâÒ²Òª¼ÓÈëparentÖ¸Õë
 	T _data;
 	RBTreeNode<T>* _left;
 	RBTreeNode<T>* _right;
@@ -38,7 +38,7 @@ struct RBTreeIterator
 	}
 	self operator++()
 	{
-		if (_node->_right)//å³è¾¹å­˜åœ¨,è®¿é—®å³è¾¹çš„æœ€å·¦èŠ‚ç‚¹
+		if (_node->_right)//ÓÒ±ß´æÔÚ,·ÃÎÊÓÒ±ßµÄ×î×ó½Úµã
 		{
 			Node* min = _node->_right;
 			while (min&&min->_left)
@@ -47,7 +47,7 @@ struct RBTreeIterator
 			}
 			_node = min;
 		}
-		else//å³è¾¹ä¸å­˜åœ¨ï¼Œè¯´æ˜å·²ç»è®¿é—®å®Œäº†
+		else//ÓÒ±ß²»´æÔÚ£¬ËµÃ÷ÒÑ¾­·ÃÎÊÍêÁË
 		{
 			Node* cur = _node;
 			Node* parent = cur->_parent;
@@ -70,7 +70,7 @@ struct RBTreeIterator
 	}
 	self operator--()
 	{
-		if (_node == nullptr)//æ‰¾æœ€å¤§çš„èŠ‚ç‚¹
+		if (_node == nullptr)//ÕÒ×î´óµÄ½Úµã
 		{
 			Node* ret = _root;
 			while (ret&&ret->_right)
@@ -79,7 +79,7 @@ struct RBTreeIterator
 			}
 			_node = ret;
 		}
-		else if (_node->_left)//å³è¾¹å­˜åœ¨å°±æ‰¾å·¦è¾¹çš„æœ€å³è¾¹èŠ‚ç‚¹
+		else if (_node->_left)//ÓÒ±ß´æÔÚ¾ÍÕÒ×ó±ßµÄ×îÓÒ±ß½Úµã
 		{
 			_node = _node->_left;
 			while (_node && _node->_right)
@@ -87,7 +87,7 @@ struct RBTreeIterator
 				_node = _node->_right;
 			}
 		}
-		else//å·¦è¾¹ä¸å­˜åœ¨å°±æ‰¾çˆ¶äº²
+		else//×ó±ß²»´æÔÚ¾ÍÕÒ¸¸Ç×
 		{
 			Node* cur = _node;
 			Node* parent = cur->_parent;
@@ -119,7 +119,7 @@ struct RBTreeIterator
 	{
 		return _node == s._node;
 	}
-	bool operator != (const self & s) const 
+	bool operator != (const self & s) 
 	{
 		return _node != s._node;
 	}
@@ -143,8 +143,21 @@ public:
 	}
 	Iterator end()
 	{
-		Iterator it(nullptr, _root);
+		Iterator it{ nullptr, _root };
 		return it;
+	}
+	ConstIterator begin() const
+	{
+		Node* ret = _root;
+		while (ret && ret->_left)
+		{
+			ret = ret->_left;
+		}
+		return ConstIterator( ret, _root );
+	}
+	ConstIterator end() const
+	{
+		return ConstIterator(nullptr, _root );
 	}
 	int height()
 	{
@@ -214,14 +227,14 @@ public:
 		}
 		cur->_parent = parent;
 		Node* ret = cur;
-		//è°ƒæ•´çº¢é»‘æ ‘
+		//µ÷ÕûºìºÚÊ÷
 		while (parent&&parent->_col==RED)
 		{
 			Node* grandparent = parent->_parent;
 			if (grandparent->_left == parent)
 			{
 				Node* uncle = grandparent->_right;
-				if (uncle && uncle->_col == RED)//å”å”å­˜åœ¨ä¸”ä¸ºçº¢
+				if (uncle && uncle->_col == RED)//ÊåÊå´æÔÚÇÒÎªºì
 				{
 					parent->_col = uncle->_col = BLACK;
 					grandparent->_col = RED;
@@ -230,14 +243,14 @@ public:
 				}
 				else
 				{
-					if (cur == parent->_left)//å”å”ä¸å­˜åœ¨æˆ–è€…å­˜åœ¨ä¸”ä¸ºé»‘//æ—‹è½¬åŠ å˜è‰²
+					if (cur == parent->_left)//ÊåÊå²»´æÔÚ»òÕß´æÔÚÇÒÎªºÚ//Ğı×ª¼Ó±äÉ«
 					{
 						RotateR(grandparent);
 						parent->_col = BLACK;
 						grandparent->_col  = RED;
 						break;
 					}
-					else//å”å”ä¸å­˜åœ¨æˆ–è€…å­˜åœ¨ä¸”ä¸ºé»‘//åŒæ—‹è½¬åŠ å˜è‰²
+					else//ÊåÊå²»´æÔÚ»òÕß´æÔÚÇÒÎªºÚ//Ë«Ğı×ª¼Ó±äÉ«
 					{
 						RotateL(parent);
 						RotateR(grandparent);
@@ -250,7 +263,7 @@ public:
 			else
 			{
 				Node* uncle = grandparent->_left;
-				if (uncle && uncle->_col == RED)//å”å”å­˜åœ¨ä¸”ä¸ºçº¢
+				if (uncle && uncle->_col == RED)//ÊåÊå´æÔÚÇÒÎªºì
 				{
 					parent->_col = uncle->_col = BLACK;
 					grandparent->_col = RED;
@@ -259,14 +272,14 @@ public:
 				}
 				else
 				{
-					if (cur == parent->_right)//å”å”ä¸å­˜åœ¨æˆ–è€…å­˜åœ¨ä¸”ä¸ºé»‘//æ—‹è½¬åŠ å˜è‰²
+					if (cur == parent->_right)//ÊåÊå²»´æÔÚ»òÕß´æÔÚÇÒÎªºÚ//Ğı×ª¼Ó±äÉ«
 					{
 						RotateL(grandparent);
 						parent->_col = BLACK;
 						grandparent->_col  = RED;
 						break;
 					}
-					else//å”å”ä¸å­˜åœ¨æˆ–è€…å­˜åœ¨ä¸”ä¸ºé»‘//åŒæ—‹è½¬åŠ å˜è‰²
+					else//ÊåÊå²»´æÔÚ»òÕß´æÔÚÇÒÎªºÚ//Ë«Ğı×ª¼Ó±äÉ«
 					{
 						RotateR(parent);
 						RotateL(grandparent);
@@ -287,7 +300,7 @@ public:
 			return true;
 		if (_root->_col == RED)
 			return false;
-		// å‚è€ƒå€¼
+		// ²Î¿¼Öµ
 		int refNum = 0;
 		Node* cur = _root;
 		while (cur)
@@ -318,10 +331,10 @@ private:
 			_root = subL;
 			_root->_parent = nullptr;
 		}
-		else//parentä¸æ˜¯æ ¹èŠ‚ç‚¹
+		else//parent²»ÊÇ¸ù½Úµã
 		{
 			subL->_parent = pparent;
-			if (pparent->_left == parent)//åˆ¤æ–­æ˜¯å“ªä¸€è¾¹æŒ‡å‘parent
+			if (pparent->_left == parent)//ÅĞ¶ÏÊÇÄÄÒ»±ßÖ¸Ïòparent
 			{
 				pparent->_left = subL;
 			}
@@ -330,7 +343,7 @@ private:
 				pparent->_right = subL;
 			}
 		}
-		//è·Ÿæ–°å¹³è¡¡å› å­
+		//¸úĞÂÆ½ºâÒò×Ó
 		//subL->_bf = 0;
 		//parent->_bf = 0;
 	}
@@ -387,19 +400,19 @@ private:
 	{
 		if (root == nullptr)
 		{
-			// å‰åºéå†èµ°åˆ°ç©ºæ—¶ï¼Œæ„å‘³ç€ä¸€æ¡è·¯å¾„èµ°å®Œäº†
+			// Ç°Ğò±éÀú×ßµ½¿ÕÊ±£¬ÒâÎ¶×ÅÒ»ÌõÂ·¾¶×ßÍêÁË
 			//cout << blackNum << endl;
 			if (refNum != blackNum)
 			{
-				cout << "å­˜åœ¨é»‘è‰²ç»“ç‚¹çš„æ•°é‡ä¸ç›¸ç­‰çš„è·¯å¾„" << endl;
+				cout << "´æÔÚºÚÉ«½áµãµÄÊıÁ¿²»ÏàµÈµÄÂ·¾¶" << endl;
 				return false;
 			}
 			return true;
 		}
-		// æ£€æŸ¥å­©å­ä¸å¤ªæ–¹ä¾¿ï¼Œå› ä¸ºå­©å­æœ‰ä¸¤ä¸ªï¼Œä¸”ä¸ä¸€å®šå­˜åœ¨ï¼Œåè¿‡æ¥æ£€æŸ¥çˆ¶äº²å°±æ–¹ä¾¿å¤šäº†
+		// ¼ì²éº¢×Ó²»Ì«·½±ã£¬ÒòÎªº¢×ÓÓĞÁ½¸ö£¬ÇÒ²»Ò»¶¨´æÔÚ£¬·´¹ıÀ´¼ì²é¸¸Ç×¾Í·½±ã¶àÁË
 		if (root->_col == RED && root->_parent->_col == RED)
 		{
-			cout << root->_kv.first << "å­˜åœ¨è¿ç»­çš„çº¢è‰²ç»“ç‚¹" << endl;
+			cout << root->_kv.first << "´æÔÚÁ¬ĞøµÄºìÉ«½áµã" << endl;
 			return false;
 		}
 		if (root->_col == BLACK)
